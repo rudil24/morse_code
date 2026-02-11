@@ -1,8 +1,8 @@
-# Project Name - Author
+# Morse Code Generator - Rudi Lewis
 
 ## Project Description
 
-Short crisp sentence of what this project sets out to do.
+A text-based (command line) Python program that takes any String input and converts it into [Morse Code](https://en.wikipedia.org/wiki/Morse_code).
 
 ## Mockup
 
@@ -28,28 +28,33 @@ Short crisp sentence of what this project sets out to do.
 
 ### MVP (Must Do)
 
-- [ ] tick list of MVP deliverables
+- [ ] use the characters . for *dit* and - for *dah* and space for *word break* and .-.-.- for period and ..--.. for question mark.
+- [ ] accurately convert A-Z and 0-9 to its corresponding code
 - [x] utilize object oriented programming wherever possible (classes and methods in separate external files, use class inheritance, keep main.py very tight and readable for flow.)
 - [x] employ great documentation in any and all *.py files, written so other developers and casuals can easily understand your code blocks and flow
 
 ### Stretch Goals (Should Do at some point)
 
-- [ ] tick list of stretch deliverables
+- [ ] additional punctuation according to [Electronics-Notes.com](https://www.electronics-notes.com/images/morse-code-table-punctuation.svg)
   
 ### Super-Stretch Goals (Could Do at some point)
 
-- [ ] tick list of super stretch deliverables
+- [ ] make an audio output of the beeps to go along with the terminal output
+  - [ ] a dit is a short beep, a dah is a long beep that should equal the length of 3 dits, a space is silence for 1 dit, and a sentence break is silence for 7 dits.
+- [ ] morse code math according to [Electronics-Notes.com](https://www.electronics-notes.com/images/morse-code-table-punctuation.svg)
 
 ### Out of Scope (Won't Do)
 
-- list of things we recognize but don't plan on addressing with this project
+- web interface / webapp UI (instructions were strictly to make it a terminal program)
+- 
 
 ## Design
 
 ### Flowchart (Program Logic Flow)
 
 ```mermaid
-%% comment: follow the ```mermaid line with specific diagram type (see more types at bottom of this file)
+%% morse code flow
+
 flowchart TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
@@ -61,10 +66,10 @@ flowchart TD
 
 ## Development Workflow
 
-- [ ] 1. do this
-- [ ] 2. do that
-- [ ] 3. do 3
-- [ ] 4. do 4
+- [ ] 1. convert A-Z and 0-9 to a reference list itu_morse.py
+- [ ] 2. write the user input routine
+- [ ] 3. write the conversion routine
+- [ ] 4. write the output to terminal routine
   - [ ] 4.1 subtask
   - [ ] 4.2 subtask
   - [ ] 4.3 subtask
@@ -73,11 +78,17 @@ flowchart TD
 - [ ] 7. FULL DEPLOYMENT ramp to 100% production
 
 ## Reflection
+<!--
+Write down how you approached the project. 
+What was hard, what was easy? How might you improve for the next project? 
+What was your biggest learning from today? 
+What would you do differently if you were to tackle this project again?
+-->
 
 | DATE | COMMENTS |
 | ----------- | -------- |
-| 01-jan-2026 | SUMMARY: do this one last (you'll always put the most recent date at the top of the stack) |
-| 31-dec-2025 | brief comments on what you did and learned that day |
+| 11-feb-2026 | SUMMARY: do this one last (you'll always put the most recent date at the top of the stack) |
+| 11-feb-2026 11am | driving requirements through this README.md |
 
 ## References
 
