@@ -2,11 +2,18 @@
 
 ## Project Description
 
-A text-based (command line) Python program that takes any String input and converts it into [Morse Code](https://en.wikipedia.org/wiki/Morse_code).
+Build and deploy a text-based (command line) Python program that takes any String input and converts it into [Morse Code](https://en.wikipedia.org/wiki/Morse_code).
+Spend *no more than about __60 minutes__ of development time, use your time wisely to get the best features out!
 
 ## Mockup
 
-![./docs/mockup.png](./docs/mockup.png)
+> %python3 morse_code/main.py \
+> Hello! Enter a phrase using English letters and/or numbers, and i'll convert it to Morse Code! \
+> User Input (esc to quit): Hello. \
+> Translation ():  ....  .  .-..  .-..  ---  .-.-.- \
+> User Input (esc to quit): \
+
+<!-- ![./docs/mockup.png](./docs/mockup.png) -->
 
 <!-- to have more control over image size & appearance, markdown supports html img tags also:
 <img src="./docs/mockup.png" width="700">  
@@ -28,54 +35,57 @@ A text-based (command line) Python program that takes any String input and conve
 
 ### MVP (Must Do)
 
-- [ ] use the characters . for *dit* and - for *dah* and space for *word break* and .-.-.- for period and ..--.. for question mark.
-- [ ] accurately convert A-Z and 0-9 to its corresponding code
+- [x] translate A-Z and 0-9 into their [ITU Morse Code](./assets/International_Morse_Code.svg.png) equivalent
+- [x] use the characters . for *dit* and - for *dah* and 2 spaces between letters (for easier visual interpretation, as in Mockup above), and 4 spaces between words and .-.-.- for period and ..--.. for question mark.
+- [x] let the user hit esc (without enter) to quit
 - [x] utilize object oriented programming wherever possible (classes and methods in separate external files, use class inheritance, keep main.py very tight and readable for flow.)
 - [x] employ great documentation in any and all *.py files, written so other developers and casuals can easily understand your code blocks and flow
 
 ### Stretch Goals (Should Do at some point)
 
-- [ ] additional punctuation according to [Electronics-Notes.com](https://www.electronics-notes.com/images/morse-code-table-punctuation.svg)
+- [x] additional punctuation according to [Electronics-Notes.com](https://www.electronics-notes.com/images/morse-code-table-punctuation.svg)
+- [ ] reverse translation (enter Morse, get back English)
+
   
 ### Super-Stretch Goals (Could Do at some point)
 
 - [ ] make an audio output of the beeps to go along with the terminal output
-  - [ ] a dit is a short beep, a dah is a long beep that should equal the length of 3 dits, a space is silence for 1 dit, and a sentence break is silence for 7 dits.
-- [ ] morse code math according to [Electronics-Notes.com](https://www.electronics-notes.com/images/morse-code-table-punctuation.svg)
+  - [ ] a dit is a short beep (always followed by 1 silent dit), a dah is a long beep that should equal the length of 3 dits (plus 1 silent dit after it), a space (word break) is silence for 3 dits, and a sentence break is silence for 7 dits.
+- [ ] "morse code math" according to notation in [Electronics-Notes.com](https://www.electronics-notes.com/images/morse-code-table-punctuation.svg)
+- [ ] automatic clipboard paste of the code
 
 ### Out of Scope (Won't Do)
 
-- web interface / webapp UI (instructions were strictly to make it a terminal program)
-- 
+- web interface / webapp UI (instructions were strictly to make it a terminal program, and spend ONLY about *60 minutes total* coding it!)
 
 ## Design
 
 ### Flowchart (Program Logic Flow)
 
 ```mermaid
-%% morse code flow
-
+%% morse code flow in TD (top down) flowchart
 flowchart TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[Car]
+    A[python3 main.py] --> B{User Input}
+    B -->|valid input|C[Translate]
+    B -->|invalid input|D[Alert user invalid input]
+    B -->|esc key|F[EXIT]
+    D -->B
+    C -->E[Return Translation to user]
+    E -->B
 %% comment: end the diagram with ``` on its own line
 ```
 
 ## Development Workflow
 
-- [ ] 1. convert A-Z and 0-9 to a reference list itu_morse.py
-- [ ] 2. write the user input routine
-- [ ] 3. write the conversion routine
-- [ ] 4. write the output to terminal routine
-  - [ ] 4.1 subtask
-  - [ ] 4.2 subtask
-  - [ ] 4.3 subtask
-- [ ] 5. END-TO-END TEST in as close to production environment as possible
-- [ ] 6. PRODUCTION BETA to fraction of actual users
-- [ ] 7. FULL DEPLOYMENT ramp to 100% production
+- [x] 1. convert A-Z and 0-9 and period and question mark to a reference file ./assets/itu_morse.py
+  - [x] 1. make sure it's easy to access individual elements in case we do reverse translation and need to compare to every letter. (dictionary? list?)
+- [x] 2. write the user input block
+- [x] 3. write the translation Class
+- [x] 4. write the output to terminal block
+- [x] 5. write the *esc to quit* clause/block
+- [x] 6. END-TO-END TEST in as close to production environment as possible
+- [x] 7. Create ./requirements.txt of necessary libraries
+- [ ] 8. PRODUCTION DEPLOY (to pythonanywhere?)
 
 ## Reflection
 <!--
@@ -87,13 +97,12 @@ What would you do differently if you were to tackle this project again?
 
 | DATE | COMMENTS |
 | ----------- | -------- |
-| 11-feb-2026 | SUMMARY: do this one last (you'll always put the most recent date at the top of the stack) |
-| 11-feb-2026 11am | driving requirements through this README.md |
+| 11-feb-2026 8pm | SUMMARY: did it all in 1 hour but i'm not pleased how Gemini is reading & reacting to this README.md, had to give a lot of prompts (didn't write the translation table to assets, didn't bounce error for bad input, etc.) |
+| 11-feb-2026 7pm | driving requirements through this README.md |
 
 ## References
 
-- [README.md Best Practices](https://github.com/jehna/readme-best-practices) I follow (some, not a lot of) these best practices 😂
-- [Markdown Guide - Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- [Morse Code Wikipedia Page](https://en.wikipedia.org/wiki/Morse_code)
 
 <!-- MORE EXAMPLES OF MERMAID DIAGRAMS
 ### Block Architecture Diagram (System Main Components)
