@@ -10,8 +10,8 @@ Spend *no more than about __60 minutes__ of development time, use your time wise
 > %python3 morse_code/main.py \
 > Hello! Enter a phrase using English letters and/or numbers, and i'll convert it to Morse Code! \
 > User Input (esc to quit): Hello. \
-> Translation ():  ....  .  .-..  .-..  ---  .-.-.- \
-> User Input (esc to quit): \
+> Translation:  ....  .  .-..  .-..  ---  .-.-.- \
+> User Input (esc to quit):
 
 <!-- ![./docs/mockup.png](./docs/mockup.png) -->
 
@@ -45,14 +45,13 @@ Spend *no more than about __60 minutes__ of development time, use your time wise
 
 - [x] additional punctuation according to [Electronics-Notes.com](https://www.electronics-notes.com/images/morse-code-table-punctuation.svg)
 - [ ] reverse translation (enter Morse, get back English)
-
   
 ### Super-Stretch Goals (Could Do at some point)
 
 - [ ] make an audio output of the beeps to go along with the terminal output
   - [ ] a dit is a short beep (always followed by 1 silent dit), a dah is a long beep that should equal the length of 3 dits (plus 1 silent dit after it), a space (word break) is silence for 3 dits, and a sentence break is silence for 7 dits.
 - [ ] "morse code math" according to notation in [Electronics-Notes.com](https://www.electronics-notes.com/images/morse-code-table-punctuation.svg)
-- [ ] automatic clipboard paste of the code
+- [ ] automatic "copy to clipboard" of the translated code
 
 ### Out of Scope (Won't Do)
 
@@ -86,6 +85,7 @@ flowchart TD
 - [x] 6. END-TO-END TEST in as close to production environment as possible
 - [x] 7. Create ./requirements.txt of necessary libraries
 - [ ] 8. PRODUCTION DEPLOY (to pythonanywhere?)
+  - [x] 1. pythonanywhere not really conducive to running terminal programs that aren't self-sufficient (users won't be able to get to your "running" program on a terminal. Best to have users download via the local route)
 
 ## Reflection
 <!--
@@ -97,7 +97,7 @@ What would you do differently if you were to tackle this project again?
 
 | DATE | COMMENTS |
 | ----------- | -------- |
-| 11-feb-2026 8pm | SUMMARY: did it all in 1 hour but i'm not pleased how Gemini is reading & reacting to this README.md, had to give a lot of prompts (didn't write the translation table to assets, didn't bounce error for bad input, etc.) |
+| 11-feb-2026 8pm | SUMMARY: did it all in 1 hour, very pleased with the simple but SHIPPED CODE!! But i'm not pleased how Gemini is reading & reacting to this README.md, had to give a lot of prompts (didn't write the translation table to assets, didn't bounce error for bad input, etc.) |
 | 11-feb-2026 7pm | driving requirements through this README.md |
 
 ## References
